@@ -1,13 +1,17 @@
+简介
+本项目为2012年实习期间开发的帮助工具。
+
+
 version 2.1.2
-�޸ģ�
-	1.�޸�config�ļ�����������
-	2.���ӶԲ���mapedit v8��֧�֣�
-	  1��Group������GroupChoiceType�ֶ�;
-	  2��MapDetails/Flags������SuspendGroupProcessing�ֶ�;
+修改：
+	1.修改config文件，增加属性
+	2.增加对部分mapedit v8的支持：
+	  1）Group中增加GroupChoiceType字段;
+	  2）MapDetails/Flags中增加SuspendGroupProcessing字段;
 
 version 
-�޸�:
-	1.���������ļ����ã��޸ĵײ��׼֧�ֽṹ
-	2.����mapedit�ۼ�����֧�֣�Accumulators��
+修改:
+	1.更改配置文件设置，修改底层标准支持结构
+	2.增加mapedit累加器的支持（Accumulators）
 	
-	3.�޸����ڵ���ʾ����
+	3.修改树节点显示内容
