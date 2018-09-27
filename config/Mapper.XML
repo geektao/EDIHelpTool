@@ -1,0 +1,1099 @@
+<root>
+<Mapper>
+	<sequence>
+		<MapDetails version="7" valueType="Object" ref="MapDetails"/>
+		<TemplateOption version="7" valueType="String"/>
+		<ExtendedRuleLibraries version="7" valueType="Object" ref="ExtendedRuleLibraries"/>
+		<INPUT version="7" valueType="Object" ref="INPUT"/>
+		<OUTPUT version="7" valueType="Object" ref="OUTPUT"/>
+		<Constants version="7" valueType="Object" ref="Constants" minOccurs="0" maxOccurs="unbounded"/>
+		<SyntaxTokens version="7" valueType="Object" ref="SyntaxTokens" minOccurs="0"/>
+		<DBCSTokens version="7" valueType="Object" ref="DBCSTokens"  minOccurs="0"/>
+		<CodeListTables version="7" valueType="Object" ref="CodeListTables" minOccurs="0"/>
+		<ConstantMap version="7" valueType="Object" ref="ConstantMap" minOccurs="0"/>
+		<Accumulators version="7" valueType="Object" ref="Accumulators" minOccurs="0"/>
+	</sequence>
+</Mapper>
+<MapDetails class="tonyx.EDI.MapDetails.MapDetails">
+	<sequence>
+		<VersionControl version="7" valueType="Object" ref="VersionControl"/>
+		<Summary version="7" valueType="Object" ref="Summary"/>
+		<Flags version="7" valueType="Object" ref="Flags"/>
+		<EDIAssociations_IN version="7" valueType="Object" ref="EDIAssociations_IN"/>
+		<EDIAssociations_OUT version="7" valueType="Object" ref="EDIAssociations_OUT"/>
+		<ExplicitRule version="7" valueType="Object" ref="DetailsExplicitRule" minOccurs="0"/>
+	</sequence>
+</MapDetails>
+<VersionControl class="tonyx.EDI.MapDetails.VersionControl">
+	<sequence>
+		<SerializationVersion version="7" valueType="String"/>
+		<MajorVersion version="7" valueType="String"/>
+		<MinorVersion version="7" valueType="String"/>
+		<CompiledDate version="7" valueType="String"/>
+	</sequence>
+</VersionControl>
+<Summary class="tonyx.EDI.MapDetails.Summary">
+	<sequence>
+		<Author version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<MapFunction version="7" valueType="String"/>
+	</sequence>
+</Summary>
+<Flags class="tonyx.EDI.MapDetails.Flags">
+	<sequence>
+		<SystemTemplate version="7" valueType="String"/>
+		<UseBigDecimal version="7" valueType="String"/>
+		<InitializeExtendedRuleVariables version="7" valueType="String"/>
+		<ErrorForNotUsed version="7" valueType="String"/>
+		<SuspendGroupProcessing version="v8" valueType="String" minOccurs="0"/>
+		<SWIFTValidation version="7" valueType="String"/>
+		<UseConfigurableTrimming version="7" valueType="String"/>
+		<CompatibleRuleExecution version="7" valueType="String"/>
+		<KeepTrailingZeroes version="7" valueType="String"/>
+	</sequence>
+</Flags>
+<EDIAssociations_IN class="tonyx.EDI.MapDetails.EDIAssociations_IN">
+	<sequence>
+		<AgencyID version="7" valueType="String"/>
+		<VersionID version="7" valueType="String"/>
+		<BindingID version="7" valueType="String"/>
+		<FunctionGroupID version="7" valueType="String"/>
+		<AgencyDescription version="7" valueType="String"/>
+		<VersionDescription version="7" valueType="String"/>
+		<BindingDescription version="7" valueType="String"/>
+		<FunctionalGroupDescription version="7" valueType="String"/>
+		<Release version="7" valueType="String"/>
+	</sequence>
+</EDIAssociations_IN>
+<EDIAssociations_OUT class="tonyx.EDI.MapDetails.EDIAssociations_OUT">
+	<sequence>
+		<AgencyID version="7" valueType="String"/>
+		<VersionID version="7" valueType="String"/>
+		<BindingID version="7" valueType="String"/>
+		<FunctionGroupID version="7" valueType="String"/>
+		<AgencyDescription version="7" valueType="String"/>
+		<VersionDescription version="7" valueType="String"/>
+		<BindingDescription version="7" valueType="String"/>
+		<FunctionalGroupDescription version="7" valueType="String"/>
+		<Release version="7" valueType="String"/>
+	</sequence>
+</EDIAssociations_OUT>
+<DetailsExplicitRule class="tonyx.EDI.MapDetails.ExplicitRule">
+	<sequence>
+		<PreSessionRule version="7" valueType="String"/>
+		<PostSessionRule version="7" valueType="String"/>
+	</sequence>
+</DetailsExplicitRule>
+<ExtendedRuleLibraries class="tonyx.EDI.ExtendedRuleLibraries.ExtendedRuleLibraries">
+	<sequence>
+		<ExtendedRuleLibraryName version="7" valueType="String" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</ExtendedRuleLibraries>
+<INPUT class="tonyx.EDI.Common.INPUT">
+	<sequence>
+		<choice minOccurs="1" maxOccurs="1">
+			<EDISyntax version="7" valueType="Object" ref="EDISyntax_INPUT" minOccurs="0"/>
+			<CHIPSSyntax version="7" valueType="Object" ref="CHIPSSyntax_INPUT" minOccurs="0"/>
+			<FEDWIRESyntax version="7" valueType="Object" ref="FEDWIRESyntax_INPUT" minOccurs="0"/>
+			<PosSyntax version="7" valueType="Object" ref="PosSyntax_INPUT" minOccurs="0"/>
+			<XMLSyntax version="7" valueType="Object" ref="XMLSyntax_INPUT" minOccurs="0"/>
+			<!--<ODBCSyntax version="7" valueType="Object" ref="" minOccurs="0"/>
+			<VarDelimSyntax version="7" valueType="Object" ref="" minOccurs="0"/>
+			<CIISyntax version="7" valueType="Object"  ref="" minOccurs="0"/>
+			<SwiftSyntax version="7" valueType="Object"  ref="" minOccurs="0"/>
+			<SPEC2000Syntax version="7" valueType="Object"  ref="" minOccurs="0"/>-->
+		</choice>
+	</sequence>
+</INPUT>
+<OUTPUT class="tonyx.EDI.Common.OUTPUT">
+	<sequence>
+		<choice minOccurs="1" maxOccurs="1">
+			<EDISyntax version="7" valueType="Object" ref="EDISyntax_OUTPUT" minOccurs="0"/>
+			<CHIPSSyntax version="7" valueType="Object" ref="CHIPSSyntax_OUTPUT" minOccurs="0"/>
+			<FEDWIRESyntax version="7" valueType="Object" ref="FEDWIRESyntax_OUTPUT" minOccurs="0"/>
+			<PosSyntax version="7" valueType="Object" ref="PosSyntax_OUTPUT" minOccurs="0"/>
+			<XMLSyntax version="7" valueType="Object" ref="XMLSyntax_OUTPUT" minOccurs="0"/>
+			<!--<ODBCSyntax version="7" valueType="Object" ref="" minOccurs="0"/>
+			<VarDelimSyntax version="7" valueType="Object" ref="" minOccurs="0"/>
+			<CIISyntax version="7" valueType="Object"  ref="" minOccurs="0"/>
+			<SwiftSyntax version="7" valueType="Object"  ref="" minOccurs="0"/>
+			<SPEC2000Syntax version="7" valueType="Object"  ref="" minOccurs="0"/>-->
+		</choice>
+	</sequence>
+</OUTPUT>
+<!--Syntax-->
+<PosSyntax_INPUT class="tonyx.EDI.Common.PosSyntax.PosSyntax">
+	<sequence>
+		<DelimiterUsed version="7" valueType="String"/>
+		<Delimiter1 version="7" valueType="String"/>
+		<Delimiter2Used version="7" valueType="String"/>
+		<Delimiter2 version="7" valueType="String"/>
+		<RecordLengthUsed version="7" valueType="String"/>
+		<RecordLength version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<DecimalCharUsed version="7" valueType="String"/>
+		<DecimalChar version="7" valueType="String"/>
+		<UseBytePositions version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="PosGroup_INPUT"/>
+	</sequence>
+</PosSyntax_INPUT>
+<PosSyntax_OUTPUT class="tonyx.EDI.Common.PosSyntax.PosSyntax">
+	<sequence>
+		<DelimiterUsed version="7" valueType="String"/>
+		<Delimiter1 version="7" valueType="String"/>
+		<Delimiter2Used version="7" valueType="String"/>
+		<Delimiter2 version="7" valueType="String"/>
+		<RecordLengthUsed version="7" valueType="String"/>
+		<RecordLength version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<DecimalCharUsed version="7" valueType="String"/>
+		<DecimalChar version="7" valueType="String"/>
+		<UseBytePositions version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="PosGroup_OUTPUT"/>
+	</sequence>
+</PosSyntax_OUTPUT>
+<EDISyntax_INPUT class="tonyx.EDI.Common.EDISyntax.EDISyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_INPUT"/>
+	</sequence>
+</EDISyntax_INPUT>
+<EDISyntax_OUTPUT class="tonyx.EDI.Common.EDISyntax.EDISyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_OUTPUT"/>
+	</sequence>
+</EDISyntax_OUTPUT>
+<CHIPSSyntax_INPUT class="tonyx.EDI.Common.EDISyntax.CHIPSSyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_INPUT"/>
+	</sequence>
+</CHIPSSyntax_INPUT>
+<CHIPSSyntax_OUTPUT class="tonyx.EDI.Common.EDISyntax.CHIPSSyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_OUTPUT"/>
+	</sequence>
+</CHIPSSyntax_OUTPUT>
+<FEDWIRESyntax_INPUT class="tonyx.EDI.Common.EDISyntax.FEDWIRESyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_INPUT"/>
+	</sequence>
+</FEDWIRESyntax_INPUT>
+<FEDWIRESyntax_OUTPUT class="tonyx.EDI.Common.EDISyntax.FEDWIRESyntax">
+	<sequence>
+		<TagDelimiterUsed version="7" valueType="String"/>
+		<TagDelimiter version="7" valueType="String"/>
+		<SegmentDelimiterUsed version="7" valueType="String"/>
+		<SegmentDelimiter version="7" valueType="String"/>
+		<ElementDelimiterUsed version="7" valueType="String"/>
+		<ElementDelimiter version="7" valueType="String"/>
+		<RepeatingElementDelimiterUsed version="7" valueType="String"/>
+		<RepeatingElementDelimiter version="7" valueType="String"/>
+		<SubElementDelimiterUsed version="7" valueType="String"/>
+		<SubElementDelimiter version="7" valueType="String"/>
+		<ReleaseCharacterUsed version="7" valueType="String"/>
+		<ReleaseCharacter version="7" valueType="String"/>
+		<DecimalSeparatorUsed version="7" valueType="String"/>
+		<DecimalSeparator version="7" valueType="String"/>
+		<SyntaxRecordUsed version="7" valueType="String"/>
+		<SyntaxRecord version="7" valueType="Object" ref="SyntaxRecord" minOccurs="0"/>
+		<StreamData version="7" valueType="String"/>
+		<CharacterEncoding version="7" valueType="String"/>
+		<HIPPADecimal version="7" valueType="String"/>
+		<DefaultPadSup version="7" valueType="String"/>
+		<PadZero version="7" valueType="String"/>
+		<RepeatSuppressionCharUsed version="7" valueType="String" minOccurs="0"/>
+		<RepeatSuppressionChar version="7" valueType="String" minOccurs="0"/>
+		<AlwaysOutputDelimiters version="7" valueType="String" minOccurs="0"/>
+		<EOFTerminatesLastSegment version="7" valueType="String" minOccurs="0"/>
+		<FixedLengthElementsNotDelimited version="7" valueType="String" minOccurs="0"/>
+		<DelimiterTerminatesCurrentElement version="7" valueType="String" minOccurs="0"/>
+		<Group version="7" valueType="Object" ref="EDIGroup_OUTPUT"/>
+	</sequence>
+</FEDWIRESyntax_OUTPUT>
+<XMLSyntax_INPUT class="tonyx.EDI.Common.XMLSyntax.XMLSyntax">
+	<sequence>
+		<OutputFormat version="7" valueType="String"/>
+		<SystemID version="7" valueType="String" minOccurs="0"/>
+		<PublicID version="7" valueType="String" minOccurs="0"/>
+		<OutputHeader version="7" valueType="String"/>
+		<JavaEncoding version="7" valueType="String" minOccurs="0"/>
+		<UseCharEntityRef version="7" valueType="String"/>
+		<UseDecimalPointChar version="7" valueType="String" minOccurs="0"/>
+		<DecimalPointChar version="7" valueType="String"/>
+		<EnableNamespaces version="7" valueType="String"/>
+		<AllowEmptyMandatorySequences version="7" valueType="String" minOccurs="0"/>
+		<TrimPCData version="7" valueType="String"/>
+		<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_INPUT"/>
+	</sequence>
+</XMLSyntax_INPUT>
+<XMLSyntax_OUTPUT class="tonyx.EDI.Common.XMLSyntax.XMLSyntax">
+	<sequence>
+		<OutputFormat version="7" valueType="String"/>
+		<SystemID version="7" valueType="String" minOccurs="0"/>
+		<PublicID version="7" valueType="String" minOccurs="0"/>
+		<OutputHeader version="7" valueType="String"/>
+		<JavaEncoding version="7" valueType="String" minOccurs="0"/>
+		<UseCharEntityRef version="7" valueType="String"/>
+		<UseDecimalPointChar version="7" valueType="String" minOccurs="0"/>
+		<DecimalPointChar version="7" valueType="String"/>
+		<EnableNamespaces version="7" valueType="String"/>
+		<AllowEmptyMandatorySequences version="7" valueType="String" minOccurs="0"/>
+		<TrimPCData version="7" valueType="String"/>
+		<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_OUTPUT"/>
+	</sequence>
+</XMLSyntax_OUTPUT>
+<SyntaxRecord class="tonyx.EDI.Common.EDISyntax.SyntaxRecord">
+	<sequence>
+		<Length version="7" valueType="String"/>
+		<Tag version="7" valueType="String"/>
+		<TagOffset version="7" valueType="String"/>
+		<ContainsData version="7" valueType="String"/>
+		<TagDelimOffset version="7" valueType="String"/>
+		<SegmentDelimOffset version="7" valueType="String"/>
+		<ElementDelimOffset version="7" valueType="String"/>
+		<RepeatDelimOffset version="7" valueType="String"/>
+		<SubElementDelimOffset version="7" valueType="String"/>
+		<RelCharOffset version="7" valueType="String"/>
+		<DecimalSeparatorOffset version="7" valueType="String"/>
+	</sequence>
+</SyntaxRecord>
+<!--Group-->
+<PosGroup_INPUT class="tonyx.EDI.Common.PosSyntax.Group">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<GroupChoiceType version="8" valueType="String"  minOccurs="0"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String"/>
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<PosRecord version="7" valueType="Object" ref="PosRecord_INPUT"/>
+			<Group version="7" valueType="Object" ref="PosGroup_INPUT"/>
+		</choice>
+	</sequence>
+</PosGroup_INPUT>
+<PosGroup_OUTPUT class="tonyx.EDI.Common.PosSyntax.Group">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<GroupChoiceType version="8" valueType="String"  minOccurs="0"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String" />
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<PosRecord version="7" valueType="Object" ref="PosRecord_OUTPUT"/>
+			<Group version="7" valueType="Object" ref="PosGroup_OUTPUT"/>
+		</choice>
+	</sequence>
+</PosGroup_OUTPUT>
+<EDIGroup_INPUT class="tonyx.EDI.Common.EDISyntax.Group">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<GroupChoiceType version="8" valueType="String"  minOccurs="0"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String"/>
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<Segment version="7" valueType="Object" ref="EDISegment_INPUT"/>
+			<Composite version="7" valueType="Object" ref="EDIComposite"/>
+			<Group version="7" valueType="Object" ref="EDIGroup_INPUT"/>
+		</choice>
+	</sequence>
+</EDIGroup_INPUT>
+<EDIGroup_OUTPUT class="tonyx.EDI.Common.EDISyntax.Group">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<GroupChoiceType version="8" valueType="String"  minOccurs="0"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String"/>
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<Segment version="7" valueType="Object" ref="EDISegment_OUTPUT"/>
+			<Composite version="7" valueType="Object" ref="EDIComposite"/>
+			<Group version="7" valueType="Object" ref="EDIGroup_OUTPUT"/>
+		</choice>
+	</sequence>
+</EDIGroup_OUTPUT>
+<XMLElementGroup_INPUT class="tonyx.EDI.Common.XMLSyntax.XMLElementGroup">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<XMLTag version="7" valueType="String"/>
+		<AllowAnyContent version="7" valueType="String"/>
+		<Abstract version="7" valueType="String"/>
+		<Link version="7" valueType="String" minOccurs="0"/>
+		<Namespace version="7" valueType="String"/>
+		<UseParentNamespace version="7" valueType="String"/>
+		<NamespacePrefixes version="7" valueType="Object" ref="NamespacePrefixes"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<XMLRecord version="7" valueType="Object" ref="XMLRecord_INPUT"/>
+			<XMLParticleGroup version="7" valueType="Object" ref="XMLParticleGroup_INPUT"/>
+			<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_INPUT"/>
+		</choice>
+	</sequence>
+</XMLElementGroup_INPUT>
+<XMLElementGroup_OUTPUT class="tonyx.EDI.Common.XMLSyntax.XMLElementGroup">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<XMLTag version="7" valueType="String"/>
+		<AllowAnyContent version="7" valueType="String"/>
+		<Abstract version="7" valueType="String"/>
+		<Link version="7" valueType="String" minOccurs="0"/>
+		<Namespace version="7" valueType="String"/>
+		<UseParentNamespace version="7" valueType="String"/>
+		<NamespacePrefixes version="7" valueType="Object" ref="NamespacePrefixes"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<XMLRecord version="7" valueType="Object" ref="XMLRecord_OUTPUT"/>
+			<XMLParticleGroup version="7" valueType="Object" ref="XMLParticleGroup_OUTPUT"/>
+			<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_OUTPUT"/>
+		</choice>
+	</sequence>
+</XMLElementGroup_OUTPUT>
+<XMLParticleGroup_INPUT class="tonyx.EDI.Common.XMLSyntax.XMLParticleGroup">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<ParticleType version="7" valueType="String"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<XMLRecord version="7" valueType="Object" ref="XMLRecord_INPUT"/>
+			<XMLParticleGroup version="7" valueType="Object" ref="XMLParticleGroup_INPUT"/>
+			<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_INPUT"/>
+		</choice>
+	</sequence>
+</XMLParticleGroup_INPUT>
+<XMLParticleGroup_OUTPUT class="tonyx.EDI.Common.XMLSyntax.XMLParticleGroup">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<PromoteGroup version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<ParticleType version="7" valueType="String"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<XMLRecord version="7" valueType="Object" ref="XMLRecord_OUTPUT"/>
+			<XMLParticleGroup version="7" valueType="Object" ref="XMLParticleGroup_OUTPUT"/>
+			<XMLElementGroup version="7" valueType="Object" ref="XMLElementGroup_OUTPUT"/>
+		</choice>
+	</sequence>
+</XMLParticleGroup_OUTPUT>
+<!---->
+<NamespacePrefixes class="tonyx.EDI.Common.XMLSyntax.NamespacePrefixes">
+	<sequence>
+		<NameSpacePrefix version="7" valueType="Object" ref="NameSpacePrefix" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</NamespacePrefixes>
+<NameSpacePrefix class="tonyx.EDI.Common.XMLSyntax.NameSpacePrefix">
+	<sequence>
+		<Prefix version="7" valueType="String"/>
+		<URI version="7" valueType="String"/>
+	</sequence>
+</NameSpacePrefix>
+<ExplicitRule class="tonyx.EDI.Common.ExplicitRule">
+	<sequence>
+		<OnBegin version="7" valueType="String"/>
+		<OnEnd version="7" valueType="String"/>
+	</sequence>
+</ExplicitRule>
+<!--KeyFields-->
+<KeyFields_INPUT class="tonyx.EDI.Common.KeyFields">
+	<sequence>
+		<KeyField version="7" valueType="Object" ref="KeyField_INPUT"/>
+	</sequence>
+</KeyFields_INPUT>
+<KeyFields_OUTPUT class="tonyx.EDI.Common.KeyFields">
+	<sequence>
+		<KeyField version="7" valueType="Object" ref="KeyField_OUTPUT"/>
+	</sequence>
+</KeyFields_OUTPUT>
+<KeyField_INPUT class="tonyx.EDI.Common.KeyField">
+	<sequence>
+		<KeyFieldID version="7" valueType="String"/>
+		<Type version="7" valueType="String"/>
+		<Data version="7" valueType="String"/>
+		<MatchOnNoMatch version="7" valueType="String"/>
+	</sequence>
+</KeyField_INPUT>
+<KeyField_OUTPUT class="tonyx.EDI.Common.KeyField">
+	<sequence>
+		<KeyFieldID version="7" valueType="String"/>
+	</sequence>
+</KeyField_OUTPUT>
+<!--Segment/Record-->
+<PosRecord_INPUT class="tonyx.EDI.Common.PosSyntax.PosRecord">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String"/>
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_INPUT" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="PosBlockSig"/>
+		<TagLength version="7" valueType="String"/>
+		<Field version="7" valueType="Object" ref="PosField" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</PosRecord_INPUT>
+<PosRecord_OUTPUT class="tonyx.EDI.Common.PosSyntax.PosRecord">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String"/>
+		<OrderingType version="7" valueType="String"/>
+		<OrderingTag version="7" valueType="String"/>
+		<UsageRelatedFieldName version="7" valueType="String"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_OUTPUT" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="PosBlockSig"/>
+		<TagLength version="7" valueType="String"/>
+		<Field version="7" valueType="Object" ref="PosField" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</PosRecord_OUTPUT>
+<EDISegment_INPUT class="tonyx.EDI.Common.EDISyntax.Segment">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String" minOccurs="0"/>
+		<GroupChoiceType version="8" valueType="String" minOccurs="0"/>
+		<OrderingType version="7" valueType="String" minOccurs="0"/>
+		<OrderingTag version="7" valueType="String" minOccurs="0"/>
+		<UsageRelatedFieldName version="7" valueType="String" minOccurs="0"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_INPUT" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="EDIBlockSig"/>
+		<WildCard version="7" valueType="String"/>
+		<Binary version="7" valueType="String"/>
+		<Float version="7" valueType="String"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<Composite version="7" valueType="Object" ref="EDIComposite"/>
+			<Field version="7" valueType="Object" ref="EDIField"/>
+		</choice>
+	</sequence>
+</EDISegment_INPUT>
+<EDISegment_OUTPUT class="tonyx.EDI.Common.EDISyntax.Segment">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String" minOccurs="0"/>
+		<GroupChoiceType version="8" valueType="String" minOccurs="0"/>
+		<OrderingType version="7" valueType="String" minOccurs="0"/>
+		<OrderingTag version="7" valueType="String" minOccurs="0"/>
+		<UsageRelatedFieldName version="7" valueType="String" minOccurs="0"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_OUTPUT" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="EDIBlockSig"/>
+		<WildCard version="7" valueType="String"/>
+		<Binary version="7" valueType="String"/>
+		<Float version="7" valueType="String"/>
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<Composite version="7" valueType="Object" ref="EDIComposite"/>
+			<Field version="7" valueType="Object" ref="EDIField"/>
+		</choice>
+	</sequence>
+</EDISegment_OUTPUT>
+<XMLRecord_INPUT class="tonyx.EDI.Common.XMLSyntax.XMLRecord">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String" minOccurs="0"/>
+		<GroupChoiceType version="8" valueType="String" minOccurs="0"/>
+		<OrderingType version="7" valueType="String" minOccurs="0"/>
+		<OrderingTag version="7" valueType="String" minOccurs="0"/>
+		<UsageRelatedFieldName version="7" valueType="String" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_INPUT" minOccurs="0"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="XMLBlockSig"/>
+		<RecordType version="7" valueType="String"/>
+		<Tag version="7" valueType="String"/>
+		<Field version="7" valueType="Object" ref="XMLField" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</XMLRecord_INPUT>
+<XMLRecord_OUTPUT class="tonyx.EDI.Common.XMLSyntax.XMLRecord">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Min version="7" valueType="String"/>
+		<Max version="7" valueType="String"/>
+		<LoopCtl version="7" valueType="String" minOccurs="0"/>
+		<GroupChoiceType version="8" valueType="String" minOccurs="0"/>
+		<OrderingType version="7" valueType="String" minOccurs="0"/>
+		<OrderingTag version="7" valueType="String" minOccurs="0"/>
+		<UsageRelatedFieldName version="7" valueType="String" minOccurs="0"/>
+		<KeyFields version="7" valueType="Object" ref="KeyFields_OUTPUT" minOccurs="0"/>
+		<ExplicitRule version="7" valueType="Object" ref="ExplicitRule" minOccurs="0"/>
+		<BlockSig version="7" valueType="Object" ref="XMLBlockSig"/>
+		<RecordType version="7" valueType="String"/>
+		<Tag version="7" valueType="String"/>
+		<Field version="7" valueType="Object" ref="XMLField" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</XMLRecord_OUTPUT>
+<!--Field-->
+<EDIComposite class="tonyx.EDI.Common.EDISyntax.Composite">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Mandatory version="7" valueType="String"/>
+		<MinUsage version="7" valueType="String"/>
+		<MaxUsage version="7" valueType="String"/>
+		<TreatAsRepeat version="7" valueType="String"/>
+		<Field version="7" valueType="Object" ref="EDIField" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</EDIComposite>
+<EDIField class="tonyx.EDI.Common.EDISyntax.Field">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Mandatory version="7" valueType="String"/>
+		<NotUsed version="7" valueType="String"  minOccurs="0"/>
+		<FieldNumber version="7" valueType="String"/>
+		<StoreGroup version="7" valueType="String"/>
+		<StoreField version="7" valueType="String"/>
+		<BusinessName version="7" valueType="String"  minOccurs="0"/>
+		<StoreLimit version="7" valueType="Object" ref="StoreLimit"/>
+		<Link version="7" valueType="String"  minOccurs="0"/>
+		<ExplicitRule version="7" valueType="String"  minOccurs="0"/>
+		<ImplicitRuleDef version="7" valueType="Object" ref="ImplicitRuleDef"  minOccurs="0"/>
+		<ConditionalRuleDef version="7" valueType="Object" ref="ConditionalRuleDef"  minOccurs="0"/>
+		<Element version="7" valueType="String"/>
+		<ElementOpt version="7" valueType="String"/>
+		<SubElement version="7" valueType="String"/>
+		<SubElementOpt version="7" valueType="String"/>
+		<MinUsage version="7" valueType="String"/>
+		<MaxUsage version="7" valueType="String"/>
+		<Binary version="7" valueType="String"/>
+		<TreatAsRepeat version="7" valueType="String"/>
+		<AlwaysOutputDelimiter version="7" valueType="String"  minOccurs="0"/>
+	</sequence>
+</EDIField>
+<PosField class="tonyx.EDI.Common.PosSyntax.Field">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Mandatory version="7" valueType="String"/>
+		<NotUsed version="7" valueType="String"  minOccurs="0"/>
+		<FieldNumber version="7" valueType="String"/>
+		<StoreGroup version="7" valueType="String"/>
+		<StoreField version="7" valueType="String"/>
+		<BusinessName version="7" valueType="String"  minOccurs="0"/>
+		<StoreLimit version="7" valueType="Object" ref="StoreLimit"/>
+		<Link version="7" valueType="String"  minOccurs="0"/>
+		<ExplicitRule version="7" valueType="String"  minOccurs="0"/>
+		<ImplicitRuleDef version="7" valueType="Object" ref="ImplicitRuleDef"  minOccurs="0"/>
+		<ConditionalRuleDef version="7" valueType="Object" ref="ConditionalRuleDef"  minOccurs="0"/>
+		<StartPos version="7" valueType="String"/>
+		<Length version="7" valueType="String"/>
+		<Justify version="7" valueType="String"/>
+		<PadChar version="7" valueType="String"/>
+		<PadHighByte version="7" valueType="String"/>
+		<Binary version="7" valueType="String"/>
+	</sequence>
+</PosField>
+<XMLField class="tonyx.EDI.Common.XMLSyntax.Field">
+	<sequence>
+		<ID version="7" valueType="String"/>
+		<Name version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+		<Active version="7" valueType="String"/>
+		<ChildCount version="7" valueType="String"/>
+		<Note version="7" valueType="String"/>
+		<Mandatory version="7" valueType="String"/>
+		<NotUsed version="7" valueType="String"  minOccurs="0"/>
+		<FieldNumber version="7" valueType="String"/>
+		<StoreGroup version="7" valueType="String"/>
+		<StoreField version="7" valueType="String"/>
+		<BusinessName version="7" valueType="String"  minOccurs="0"/>
+		<StoreLimit version="7" valueType="Object" ref="StoreLimit"/>
+		<Link version="7" valueType="String"  minOccurs="0"/>
+		<ExplicitRule version="7" valueType="String"  minOccurs="0"/>
+		<ImplicitRuleDef version="7" valueType="Object" ref="ImplicitRuleDef"  minOccurs="0"/>
+		<FieldType version="7" valueType="String"/>
+		<AttrType version="7" valueType="String"/>
+		<AttrBehavior version="7" valueType="String"/>
+		<EntityType version="7" valueType="String"/>
+		<GeneralEntity version="7" valueType="String"/>
+		<ParsedEntity version="7" valueType="String"/>
+		<Default version="7" valueType="String"/>
+		<Tag version="7" valueType="String"/>
+		<Namespace version="7" valueType="String"/>
+		<UseParentNamespace version="7" valueType="String"/>
+		<PublicID version="7" valueType="String"/>
+		<SystemLiteral version="7" valueType="String"/>
+		<Value version="7" valueType="String"/>
+	</sequence>	
+</XMLField>
+<!---->
+<StoreLimit class="tonyx.EDI.Common.StoreLimit">
+	<sequence>
+		<MaxLen version="7" valueType="String"/>
+		<MinLen version="7" valueType="String"/>
+		<Signed version="7" valueType="String"/>
+		<DataType version="7" valueType="String"/>
+		<ImpliedDecimalPos version="7" valueType="String"/>
+		<ImplicitDecimal version="7" valueType="String"/>
+		<AllowSignedDecimal version="7" valueType="String"/>
+		<Format version="7" valueType="String"/>
+		<BinaryOutput version="7" valueType="String"/>
+		<BinaryWidth version="7" valueType="String"/>
+	</sequence>
+</StoreLimit>
+<!--BlockSig-->
+<PosBlockSig class="tonyx.EDI.Common.PosSyntax.BlockSig">
+	<sequence minOccurs="2" maxOccurs="2">
+		<Tag version="7" valueType="String"/>
+		<TagPos version="7" valueType="String"/>
+		<KeyFieldID version="7" valueType="String"/>
+		<KeyFieldData version="7" valueType="String"/>
+		<KeyFieldAction version="7" valueType="String"/>
+	</sequence>
+</PosBlockSig>
+<EDIBlockSig class="tonyx.EDI.Common.EDISyntax.BlockSig">
+	<sequence minOccurs="2" maxOccurs="2">
+		<Tag version="7" valueType="String"/>
+		<TagPos version="7" valueType="String"/>
+		<KeyFieldID version="7" valueType="String"/>
+		<KeyFieldData version="7" valueType="String"/>
+		<KeyFieldAction version="7" valueType="String"/>
+	</sequence>
+</EDIBlockSig>
+<XMLBlockSig class="tonyx.EDI.Common.XMLSyntax.BlockSig">
+	<sequence minOccurs="2" maxOccurs="2">
+		<TagIndex version="7" valueType="String"/>
+		<NamespaceIndex version="7" valueType="String"/>
+		<BlockType version="7" valueType="String"/>
+		<Flags version="7" valueType="String"/>
+		<Padding version="7" valueType="String"/>
+		<KeyFieldID version="7" valueType="String"/>
+		<KeyFieldData version="7" valueType="String"/>
+		<KeyFieldAction version="7" valueType="String"/>
+	</sequence>
+</XMLBlockSig>
+<!--ImplicitRuleDef-->
+<ImplicitRuleDef class="tonyx.EDI.Common.ImplicitRuleDef">
+	<sequence>
+		<choice minOccurs="0" maxOccurs="1">
+			<UseCode version="7" valueType="Object" ref="UseCode"/>
+			<UseConstant version="7" valueType="Object" ref="UseConstant"/>
+			<UseSystemVariable version="7" valueType="Object" ref="UseSystemVariable"/>
+			<UseAccumulator version="7" valueType="Object" ref="UseAccumulator"/>
+			<UseSelect version="7" valueType="Object" ref="UseSelect"/>
+			<UseUpdate version="7" valueType="Object" ref="UseUpdate"/>
+			<UseLoopCount version="7" valueType="Object" ref="UseLoopCount"/>
+		</choice>
+	</sequence>
+</ImplicitRuleDef>
+<UseCode class="tonyx.EDI.Common.UseCode">
+	<sequence>
+		<TableID version="7" valueType="String"/>
+		<DestinationFieldID version="7" valueType="String"/>
+		<Member version="7" valueType="String"/>
+	</sequence>
+</UseCode>
+<UseConstant class="tonyx.EDI.Common.UseConstant">
+	<sequence>
+		<ConstantID version="7" valueType="String"/>
+		<ConditionalFieldID version="7" valueType="String"/>
+	</sequence>
+</UseConstant>
+<UseSystemVariable class="tonyx.EDI.Common.UseSystemVariable">
+	<sequence>
+		<ConstantID version="7" valueType="String"/>
+	</sequence>
+</UseSystemVariable>
+<UseAccumulator class="tonyx.EDI.Common.UseAccumulator">
+	<sequence>
+		<Accumulator version="7" valueType="Object" ref="UAccumulator" minOccurs="0" maxOccurs="6"/>
+	</sequence>
+</UseAccumulator>
+<UAccumulator class="tonyx.EDI.Common.Accumulator">
+	<sequence>
+		<AccumulatorID version="7" valueType="String"/>
+		<AccumulatorName version="7" valueType="String" minOccurs="0"/>
+		<AccumulatorAction version="7" valueType="String" minOccurs="0" maxOccurs="4"/>
+		<AccumulatorAlternate version="7" valueType="String" minOccurs="0" maxOccurs="1"/>
+	</sequence>
+</UAccumulator>
+<UseSelect class="tonyx.EDI.Common.UseSelect">
+	<sequence>
+		<TableName version="7" valueType="String"/>
+		<SubTableNameConstantID version="7" valueType="String" minOccurs="0"/>
+		<Member version="7" valueType="String"/>
+		<Mapping version="7" valueType="Object" ref="Mapping" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</UseSelect>
+<Mapping class="tonyx.EDI.Common.Mapping">
+	<sequence>
+		<MapFrom version="7" valueType="String"/>
+		<ToFieldID version="7" valueType="String" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</Mapping>
+<UseUpdate class="tonyx.EDI.Common.UseUpdate">
+	<sequence>
+		<TableName version="7" valueType="String"/>
+		<SubTableNameConstantID version="7" valueType="String"  minOccurs="0"/>
+		<MapFrom version="7" valueType="String"/>
+	</sequence>
+</UseUpdate>
+<UseLoopCount class="tonyx.EDI.Common.UseLoopCount">
+	<sequence>
+		<GroupID version="7" valueType="String"/>
+	</sequence>
+</UseLoopCount>
+<!--ConditionalRuleDef-->
+<ConditionalRuleDef class="tonyx.EDI.Common.ConditionalRuleDef">
+	<sequence>
+		<RelationCode version="7" valueType="String"/>
+		<RelationIndex version="7" valueType="String"/>
+		<SubjectElement version="7" valueType="Object" ref="SubjectElement" minOccurs="0"/>
+	</sequence>
+</ConditionalRuleDef>
+<SubjectElement class="tonyx.EDI.Common.SubjectElement">
+	<sequence>
+		<FieldID version="7" valueType="String" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</SubjectElement>
+<!--Constants-->
+<Constants class="tonyx.EDI.Constants.Constants">
+	<sequence>
+		<Count version="7" valueType="String"/>
+		<Constant version="7" valueType="Object" ref="CConstant"/>
+	</sequence>
+</Constants>
+<CConstant class="tonyx.EDI.Constants.Constant">
+	<sequence>
+		<CType version="7" valueType="String"/>
+		<CNameExist version="7" valueType="String"/>
+		<CName version="7" valueType="String"/>
+		<CValue version="7" valueType="String"/>
+	</sequence>
+</CConstant>
+<!--SyntaxTokens-->
+<SyntaxTokens class="tonyx.EDI.SyntaxTokens.SyntaxTokens">
+	<sequence>
+		<Token version="7" valueType="Object" ref="SyntaxToken" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</SyntaxTokens>
+<SyntaxToken class="tonyx.EDI.SyntaxTokens.Token">
+	<sequence>
+		<Code version="7" valueType="String"/>
+		<Range version="7" valueType="Object" ref="Range" minOccurs="0" maxOccurs="unbounded"/>
+		<Char version="7" valueType="String" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</SyntaxToken>
+<Range class="tonyx.EDI.SyntaxTokens.Range">
+	<sequence>
+		<Start version="7" valueType="String"/>
+		<End version="7" valueType="String"/>
+	</sequence>
+</Range>
+<!--DBCSTokens-->
+<DBCSTokens class="tonyx.EDI.DBCSTokens.DBCSTokens">
+	<sequence>
+		<CodePageID version="7" valueType="String"/>
+		<Token version="7" valueType="Object" ref="DBCSToken" minOccurs="0" maxOccurs="8"/>
+	</sequence>
+</DBCSTokens>
+<DBCSToken class="tonyx.EDI.DBCSTokens.Token">
+	<sequence>
+		<Code version="7" valueType="String"/>
+		<LeadByte version="7" valueType="Object" ref="LeadByte" minOccurs="0" maxOccurs="256"/>
+	</sequence>
+</DBCSToken>
+<LeadByte class="tonyx.EDI.DBCSTokens.LeadByte">
+	<sequence>
+		<LeadByteID version="7" valueType="String"/>
+		<TrailBytes version="7" valueType="String"/>
+	</sequence>
+</LeadByte>
+<!--CodeListTables-->
+<CodeListTables class="tonyx.EDI.CodeListTables.CodeListTables">
+	<sequence>
+		<Table version="7" valueType="Object" ref="Table" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</CodeListTables>
+<Table class="tonyx.EDI.CodeListTables.Table">
+	<sequence>
+		<TableID version="7" valueType="String"/>
+		<TableDescription version="7" valueType="String"/>
+		<Entry version="7" valueType="Object" ref="Entry" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</Table>
+<Entry class="tonyx.EDI.CodeListTables.Entry">
+	<sequence>
+		<Value version="7" valueType="String"/>
+		<Description version="7" valueType="String"/>
+	</sequence>
+</Entry>
+<!--ConstantMap-->
+<ConstantMap class="tonyx.EDI.ConstantMap.ConstantMap">
+	<sequence>
+		<Constant version="7" valueType="Object" ref="Constant"  minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</ConstantMap>
+<Constant class="tonyx.EDI.ConstantMap.Constant">
+	<sequence>
+		<ConstantID version="7" valueType="String"/>
+		<Type version="7" valueType="String"/>
+		<Value version="7" valueType="String"/>
+	</sequence>
+</Constant>
+<!--Accumulators-->
+<Accumulators class="tonyx.EDI.Accumulators.Accumulators">
+	<sequence>
+		<Accumulator version="7" valueType="Object" ref="Accumulator" minOccurs="0" maxOccurs="unbounded"/>
+	</sequence>
+</Accumulators>
+<Accumulator  class="tonyx.EDI.Accumulators.Accumulator">
+	<sequence>
+		<AccumulatorID version="7" valueType="String"/>
+		<AccumulatorName version="7" valueType="String"/>
+	</sequence>
+</Accumulator>
+</root>
